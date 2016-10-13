@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SaveSystem">
+      <HintPath>..\..\..\Classes\SaveSystem\SaveSystem\bin\Debug\SaveSystem.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,14 +49,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="GameBase.cs" />
+    <Compile Include="Base.cs" />
+    <Compile Include="Classes\Alien.cs" />
+    <Compile Include="Classes\Team.cs" />
+    <Compile Include="ClockworkBattle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ClockworkBattle.Designer.cs">
+      <DependentUpon>ClockworkBattle.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ClockworkBattle.resx">
+      <DependentUpon>ClockworkBattle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +72,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Images\鐘點站.xmind" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +87,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Alien Image\Accountant.png" />
+    <Content Include="Images\Alien Image\Builder.png" />
+    <Content Include="Images\Alien Image\Doctor.png" />
+    <Content Include="Images\Alien Image\Programmer.png" />
+    <Content Include="Images\Alien Image\Reporter.png" />
+    <Content Include="Images\Alien Image\Senator.png" />
+    <Content Include="Images\Background.png" />
+    <Content Include="Images\Items for Sale\01.PNG" />
+    <Content Include="Images\Items for Sale\02.PNG" />
+    <Content Include="Images\Items for Sale\03.PNG" />
+    <Content Include="Images\Items for Sale\10.PNG" />
+    <Content Include="Images\Items for Sale\11.PNG" />
+    <Content Include="Images\Items for Sale\12.PNG" />
+    <Content Include="Images\Items for Sale\13.PNG" />
+    <Content Include="Images\Items for Sale\14.PNG" />
+    <Content Include="Images\Items for Sale\15.PNG" />
+    <Content Include="Images\Items for Sale\16.PNG" />
+    <Content Include="Images\Items for Sale\20.PNG" />
+    <Content Include="Images\Items for Sale\21.PNG" />
+    <Content Include="Images\Items for Sale\22.PNG" />
+    <Content Include="Images\Items for Sale\23.PNG" />
+    <Content Include="Images\Items for Sale\24.PNG" />
+    <Content Include="Images\Items for Sale\25.PNG" />
+    <Content Include="Images\Items for Sale\26.PNG" />
+    <Content Include="Images\Planets\Planet1.png" />
+    <Content Include="Images\Planets\Planet10.png" />
+    <Content Include="Images\Planets\Planet11.png" />
+    <Content Include="Images\Planets\Planet12.png" />
+    <Content Include="Images\Planets\Planet2.png" />
+    <Content Include="Images\Planets\Planet3.png" />
+    <Content Include="Images\Planets\Planet4.png" />
+    <Content Include="Images\Planets\Planet5.png" />
+    <Content Include="Images\Planets\Planet6.png" />
+    <Content Include="Images\Planets\Planet7.png" />
+    <Content Include="Images\Planets\Planet8.png" />
+    <Content Include="Images\Planets\Planet9.png" />
+    <Content Include="Images\Rocket.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
