@@ -8,7 +8,7 @@ namespace Clockwork_Battle_V.CSharp.Classes
 	/// <summary>
 	/// Base class for all Aliens. Initialize first then finish up with method FinshInit();
 	/// </summary>
-	internal class Alien
+	public  class Alien
 	{
 		public static GameBase GameBase;
 
@@ -26,15 +26,35 @@ namespace Clockwork_Battle_V.CSharp.Classes
 
 		public Label CareerLabel { private get; set; }
 		public Label PointsLabel { private get; set; }
-		public PictureBox image { private get; set; }
+		public PictureBox Image { private get; set; }
 
 
-		public Alien(Careers career,Team team)
+		public Alien(Careers career, Team team)
 		{
 			Career = career;
 			this.team = team;
+			Points = (new Func<decimal>(() => {
+				switch (career)
+				{
+					case Careers.Doctor:
+						return 100;
+					case Careers.Accountant:
+						return 120;
+					case Careers.Senator:
+						return 120;
+					case Careers.Builder:
+						return 120;
+					case Careers.Programmer:
+						return 120;
+					case Careers.Reporter:
+						return 100;
+					default:
+						return 0;
+				}
+			}))();
+			
 		}
-		
+
 		//Interface
 		public void AddPoints(decimal points)
 		{
@@ -55,10 +75,29 @@ namespace Clockwork_Battle_V.CSharp.Classes
 		public void FinishInit()
 		{
 			CareerLabel.Text = ChineseCareers();
+			Image.Image = DeterminePic();
 			UpdateLabels();
-			image.Image = DeterminePic();
 		}
-
+		public string ChineseCareers()
+		{
+			switch (Career)
+			{
+				case Careers.Doctor:
+					return "醫師";
+				case Careers.Accountant:
+					return "會計師";
+				case Careers.Senator:
+					return "立委";
+				case Careers.Builder:
+					return "建築師";
+				case Careers.Programmer:
+					return "電腦工程師";
+				case Careers.Reporter:
+					return "記者";
+				default:
+					throw new ArgumentOutOfRangeException();
+			}
+		}
 
 		//Private Methods
 		private Image DeterminePic()
@@ -121,28 +160,7 @@ namespace Clockwork_Battle_V.CSharp.Classes
 		{
 			Reporter?.DirectAdd(points*ReporterMultiplier);
 		}
-
-		//Helper Methods
-		private string ChineseCareers()
-		{
-			switch (Career)
-			{
-				case Careers.Doctor:
-					return "醫師";
-				case Careers.Accountant:
-					return "會計師";
-				case Careers.Senator:
-					return "立委";
-				case Careers.Builder:
-					return "建築師";
-				case Careers.Programmer:
-					return "電腦工程師";
-				case Careers.Reporter:
-					return "記者";
-				default:
-					throw new ArgumentOutOfRangeException();
-			}
-		}
+		
 
 		//Enums
 		public enum IsKing

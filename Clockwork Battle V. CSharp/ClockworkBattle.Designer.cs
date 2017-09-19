@@ -1,11 +1,14 @@
-﻿namespace Clockwork_Battle_V.CSharp
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Clockwork_Battle_V.CSharp
 {
     partial class ClockworkBattle
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -63,8 +66,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button lockBtn;
-		private System.Windows.Forms.Timer timer1;
+        private Button lockBtn;
+		private Timer timer1;
 	}
 }
 

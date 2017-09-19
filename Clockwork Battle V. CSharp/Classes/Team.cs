@@ -1,6 +1,6 @@
 ﻿namespace Clockwork_Battle_V.CSharp.Classes
 {
-	class Team
+	public class Team
 	{
 		public Alien[] Aliens = new Alien[3];
 

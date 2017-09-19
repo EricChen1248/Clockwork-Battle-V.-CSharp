@@ -1,16 +1,18 @@
 ﻿using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace Clockwork_Battle_V.CSharp
 {
-	class Base
+	public class Base
 	{
-		internal static Form Main;
+		public static Form Main;
+		public static Settings Settings;
+		public static GameBase GameBase;
+
 		public List<Control> Controls = new List<Control>();
 		
 
-		private const decimal endGameMoney = 0.05M;
+		private const decimal EndGameMoney = 0.05M;
 		
 
 		public void End()
@@ -21,7 +23,7 @@ namespace Clockwork_Battle_V.CSharp
 			}
 		}
 
-		public string NumToChin(int team)
+		public static string NumToChin(int team)
 		{
 			switch (team)
 			{
